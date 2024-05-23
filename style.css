@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     background: linear-gradient(to bottom, #00c6ff, #0072ff);
     display: flex;
     justify-content: center;
@@ -12,11 +12,21 @@ body {
 
 .container {
     animation: fadeIn 2s;
+    position: relative;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+}
+
+.profile {
+    margin-top: -50px; /* Adjust this value as needed */
 }
 
 .profile img {
@@ -48,7 +58,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
