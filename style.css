@@ -4,11 +4,10 @@ body {
     background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue gradient background */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Changed from center to flex-start to allow scrolling */
     min-height: 100vh;
     color: white;
-    overflow: hidden;
-    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 #particles-js {
@@ -28,6 +27,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px; /* Added some margin at the top */
+    margin-bottom: 50px; /* Ensure there's space at the bottom for scrolling */
 }
 
 @keyframes fadeIn {
@@ -57,8 +58,8 @@ body {
 }
 
 .profile img {
-    width: 150px;
-    height: 150px;
+    width: 120px; /* Adjusted size for mobile */
+    height: 120px; /* Adjusted size for mobile */
     transition: transform 0.3s;
     animation: float 4s infinite;
 }
@@ -75,6 +76,7 @@ body {
 
 .links {
     width: 100%; /* Make the links container full width */
+    padding-bottom: 20px; /* Add some padding to the bottom */
 }
 
 .links a {
@@ -82,13 +84,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 0;
+    padding: 10px 0; /* Adjusted padding for mobile */
     border: none;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 18px;
+    font-size: 16px; /* Adjusted font size for mobile */
     font-weight: 500;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     width: 100%; /* Ensure the buttons take full width */
@@ -159,5 +161,27 @@ body {
     to {
         transform: scale(4);
         opacity: 0;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.appear {
+    opacity: 1;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    .profile img {
+        width: 100px; /* Smaller profile image */
+        height: 100px;
+    }
+    
+    .links a {
+        padding: 10px 0; /* Reduced padding for mobile */
+        font-size: 14px; /* Smaller font size for mobile */
     }
 }
